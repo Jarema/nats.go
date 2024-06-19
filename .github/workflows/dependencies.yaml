@@ -42,7 +42,6 @@ jobs:
         if: env.has_changes == 'true'
         run: |
           git checkout -b update-report-branch
-          git pull
           git add dependencies.txt
           git commit -m "Update dependencies.md"
           git push -u origin update-report-branch
