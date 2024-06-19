@@ -31,7 +31,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git pull
 
       - name: Check for changes
         id: git_diff
@@ -43,6 +42,7 @@ jobs:
         if: env.has_changes == 'true'
         run: |
           git checkout -b update-report-branch
+          git pull
           git add dependencies.txt
           git commit -m "Update dependencies.md"
           git push -u origin update-report-branch
