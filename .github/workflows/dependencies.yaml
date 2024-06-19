@@ -31,7 +31,7 @@ jobs:
       - name: Install go-licenses
         run: go install github.com/google/go-licenses@latest
       - name: Run license check
-        run: go-licenses report . > dependencies.txt
+        run: go-licenses report . > dependencies.md
 
       - name: Configure git
         run: |
@@ -42,13 +42,13 @@ jobs:
         id: git_diff
         run: |
           git fetch
-          git diff --exit-code dependencies.txt || echo "has_changes=true" >> $GITHUB_ENV
+          git diff --exit-code dependencies.md || echo "has_changes=true" >> $GITHUB_ENV
 
       - name: Commit changes
         if: env.has_changes == 'true'
         run: |
           git checkout -b update-report-branch
-          git add dependencies.txt
+          git add dependencies.md
           git commit -m "Update dependencies.md"
           git push -u origin update-report-branch
 
