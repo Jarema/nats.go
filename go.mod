@@ -7,7 +7,6 @@ require (
 	github.com/nats-io/nkeys v0.4.7
 	github.com/nats-io/nuid v1.0.1
 	golang.org/x/text v0.14.0
-	google.golang.org/protobuf v1.26.0
 )
 
 require (
