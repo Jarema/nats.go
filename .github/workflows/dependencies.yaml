@@ -51,5 +51,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr create --title "Update dependencies.md" --body "This PR updates the dependencies report" --head update-report-branch --base main
+          gh pr create --title "Update dependencies.md" --body "This PR updates the dependencies report" --head update-report-branch --base master
 
