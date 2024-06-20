@@ -30,6 +30,9 @@ jobs:
 
       - name: Install go-licenses
         run: go install github.com/google/go-licenses@latest
+        # We need this step because of test dependencies and how they are handled in nats.go
+      - name: Run go mod tidy
+        run: go mod tidy
       - name: Run license check
         run: go-licenses report ./... --template dependencies.tpl > dependencies.md
 
