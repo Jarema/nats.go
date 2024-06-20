@@ -11,6 +11,9 @@ jobs:
   license-check:
     runs-on: ubuntu-latest
 
+    env:
+      BRANCH_NAME: update-report-branch-${{ github.run_id }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -50,7 +53,7 @@ jobs:
       - name: Commit changes
         if: env.has_changes == 'true'
         run: |
-          git checkout -b update-report-branch
+          git checkout -b "$BRANCH_NAME"
           git add dependencies.md
           git commit -m "Update dependencies.md"
           git push -u origin update-report-branch
