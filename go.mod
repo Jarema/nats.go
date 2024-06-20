@@ -11,7 +11,7 @@ require (
 	github.com/nats-io/nuid v1.0.1
 	go.uber.org/goleak v1.3.0
 	golang.org/x/text v0.15.0
-	google.golang.org/protobuf v1.34.2
+	google.golang.org/protobuf v1.33.0
 )
 
 require (
