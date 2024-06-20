@@ -25,11 +25,11 @@ jobs:
         with:
           go-version: '1.22'
 
-      - name: Run on main
-        run: |
-          git fetch
-          git checkout main
-          git pull
+      # - name: Run on main
+      #   run: |
+      #     git fetch
+      #     git checkout main
+      #     git pull
 
       - name: Install go-licenses
         run: go install github.com/google/go-licenses@latest
